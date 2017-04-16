@@ -21,6 +21,9 @@ fn main() {
         if matches.is_present("words") {
             println!("{}", word_count(&contents))
         }
+        if matches.is_present("lines") {
+            println!("{}", line_count(&contents))
+        }
     }
 }
 
@@ -31,4 +34,9 @@ fn char_count(contents: &str) -> usize {
 fn word_count(contents: &str) -> usize {
     let words: Vec<&str> = contents.split_whitespace().collect();
     words.len()
+}
+
+fn line_count(contents: &str) -> usize {
+    let lines: Vec<&str> = contents.split('\n').collect();
+    lines.len()
 }
