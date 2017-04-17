@@ -32,11 +32,9 @@ fn char_count(contents: &str) -> usize {
 }
 
 fn word_count(contents: &str) -> usize {
-    let words: Vec<&str> = contents.split_whitespace().collect();
-    words.len()
+    contents.split_whitespace().count()
 }
 
 fn line_count(contents: &str) -> usize {
-    let lines: Vec<&str> = contents.split('\n').collect();
-    lines.len()
+    contents.split('\n').count()
 }
